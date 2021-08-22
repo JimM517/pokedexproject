@@ -2,11 +2,11 @@ const pokedex = document.getElementById('pokedex');
 
 const getPoke = () => {
     const promises = [];
-    for (let i = 1; i <= 150; i++) {
+    for (let i = 1; i <= 807; i++) {
         const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
         promises.push(fetch(url).then((res) => res.json()));
     };
-
+    //resolve all promises into one object//
     Promise.all(promises).then((results) => {
         const pokemon = results.map((data) => ({
             name: data.name,
