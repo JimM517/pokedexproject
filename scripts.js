@@ -13,7 +13,6 @@ const getPoke = () => {
             id: data.id,
             image: data.sprites['front_default'],
             moves: data.moves.map(move => move.move.name).join(', '),
-            stats: data.stats.map(stat => stat.stat.name).join(', '),
             type: data.types.map(type => type.type.name).join(', '),
         }));
        getSprite(pokemon);
@@ -26,7 +25,6 @@ const getSprite = (pokemon) => {
         <img class="card-image" src="${pokemon.image}" />
         <h2 class="card-title">${pokemon.id}.${pokemon.name}</h2>
         <p class="card-subtitle">${pokemon.moves}</p>
-        <p class="card-subtitle">${pokemon.stats}</p>
         <p class="card-subtitle">${pokemon.type}</p>
     </li>
     `)
